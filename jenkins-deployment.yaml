@@ -1,0 +1,71 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: jenkins
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: jenkins
+    spec:
+      containers:
+      - env:
+        - name: JAVA_OPTS
+          value: -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
+        - name: TRY_UPGRADE_IF_NO_MARKER
+          value: "true"
+        image: jenkins/jenkins:lts
+        name: jenkins
+        ports:
+          - name: http-port
+            containerPort: 8080
+          - name: jnlp-port
+            containerPort: 50000
+        readinessProbe:
+          httpGet:
+            path: /login
+            port: 8080
+          periodSeconds: 30
+          timeoutSeconds: 30
+          successThreshold: 2
+          failureThreshold: 5
+        resources:
+          requests:
+            memory: "480Mi"
+            cpu: "150m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        volumeMounts:
+        - mountPath: /var/jenkins_home
+          name: jenkins-claim0
+        - mounthPath: /var/jenkins_home/casc_configs/jenkins.yaml
+          name: jenkins-config
+          readOnly: true
+          subPath: jenkins.yaml
+      initContainers:
+      - name: fix-permissions
+        image: busybox
+        command: ["sh", "-c", "chown -R 1000:1000 /var/jenkins_home"]
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: jenkins-claim0
+          mountPath: /var/jenkins_home 
+      hostname: vega-mep-jenkins
+      restartPolicy: Always
+      volumes:
+      - name: jenkins-claim0
+        persistentVolumeClaim:
+          claimName: jenkins-claim0
+      - name: jenkins-config
+         configMap:
+           defaultMode: 0600
+           name: jenkins-config
+#      priorityClassName: high-priority
+status: {}
