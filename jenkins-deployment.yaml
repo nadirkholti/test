@@ -53,7 +53,7 @@ spec:
         volumeMounts:
         - name: jenkins-claim0
           mountPath: /var/jenkins_home
-       -  name: jenkins-config
+        - name: jenkins-config
           mounthPath: /var/jenkins_home/casc_configs/jenkins.yaml
           readOnly: true
           subPath: jenkins.yaml
