@@ -19,6 +19,8 @@ spec:
           value: -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
         - name: TRY_UPGRADE_IF_NO_MARKER
           value: "true"
+        - name: CASC_JENKINS_CONFIG
+          value: /var/jenkins_home/casc_configs/jenkins.yaml
         image: jenkins/jenkins:lts
         name: jenkins
         ports:
