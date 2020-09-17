@@ -1,0 +1,333 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - gitlabPersonalAccessToken:
+          id: "adb6eb19-9f98-46cf-b7f9-f9c4f9bf46ae"
+          scope: GLOBAL
+          token: "{AQAAABAAAAAwNB4kmgI1Kn3brleeZw5xFJhAlzbDHvqhyQ+uIoUZglsrw5Czb3YSy84NKilOm9Ueqn8QXRNTo05JZt332a6WMw==}"
+      - gitlabPersonalAccessToken:
+          id: "Sonarqube"
+          scope: GLOBAL
+          token: "{AQAAABAAAAAwsEbaS4j+WmuHmc01YRFOGvYpoOiE4bBi3PFE7G4x/dSaMmJI6NVhUxx79u7XW+UEFyBt7s5Lk4Y2DF4udr+5aw==}"
+      - string:
+          id: "SonarQube"
+          scope: GLOBAL
+          secret: "{AQAAABAAAAAQyRdeTHRNtBsEOEtoAsTSgvUgonXAVL4b3StOipLKbg0=}"
+      - gitLabApiTokenImpl:
+          apiToken: "{AQAAABAAAABQ9wUWrNl/xBSbkpCXsaqJHJxrTrdNmsXR6Ou6f+K7x86RoXlmYb1zPNRETyQCeJ0lY0Zpx2l0q9282N+AxJy53V577RrokNZAl+wG38afBV9s8+/CM3IJNKkVxRV/3giZ}"
+          description: "Gitlab Jenkins API Credential"
+          id: "gitlabid"
+          scope: GLOBAL
+      - string:
+          id: "9189e5d2448078b89d1c391d8d87befa70914e5bd18505efe8367743f259931f"
+          scope: GLOBAL
+          secret: "{AQAAABAAAABQ6kjXL+cWBhkukz3aKpk3HQnxJGieGPAE3mq+8YYKv0XnuyPFqgwnPc6YdJOEPuZ9jrqmgVoImbWdG/qs//uJCog7VgcLoraxet0doEhITyBAOxr9lHXSaerrEGMrwPEM}"
+      - gitLabApiTokenImpl:
+          apiToken: "{AQAAABAAAAAgSUk/SkFaJ9eFwU+atm3FTKlc3XBN1HPUGukmJNFM5r1OkkbqKRX7appirggkQbFi}"
+          id: "scorpius-icarrier-data-frnt-react"
+          scope: GLOBAL
+      - usernamePassword:
+          description: "Sirius-GitLab"
+          id: "4b1cc709-5bba-41f8-9f8d-20bcd1c72191"
+          password: "{AQAAABAAAAAQDoS6rAOV88Sw3I6jygUDymodRGZI2BEnVjZL9hV6+vU=}"
+          scope: GLOBAL
+          username: "nadir.kholti"
+      - usernamePassword:
+          description: "gitlab admin access token"
+          id: "43613237-7ebf-4f3b-aaa6-b495c9ff92f7"
+          password: "{AQAAABAAAAAgNn3z1UOX2n+1sXEkr4sdDe2Z2cYQw1z2SDrsIUTjuzoPmJYpGcgQDLWeEfgZE26Q}"
+          scope: GLOBAL
+          username: "admin"
+      - gitlabPersonalAccessToken:
+          description: "gitlab admin access token"
+          id: "root"
+          scope: GLOBAL
+          token: "{AQAAABAAAAAgWrUjD1Rp+pI+ldIW2yUwBC1QB+lL1pkXJTvCOOttk1Pfh4qWUkbsf+kLSB8Zj3oM}"
+      - gitlabPersonalAccessToken:
+          description: "root"
+          id: "5f290b83-af21-4cd0-9f88-9095a6d62ab2"
+          scope: GLOBAL
+          token: "{AQAAABAAAAAgNSYW4PWjbezKFx/q5Y505Qkri9+3UXoUdwV/VIftFn+JkF1AJg/2zt8y58n5WlhF}"
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy: |-
+    FAILED TO EXPORT
+    hudson.model.Hudson#authorizationStrategy: java.lang.SecurityException: Rejected dangerous permission: hudson.model.Hudson.UploadPlugins
+      at org.jenkinsci.plugins.rolestrategy.permissions.PermissionHelper.fromStrings(PermissionHelper.java:80)
+      at com.michelin.cio.hudson.plugins.rolestrategy.Role.<init>(Role.java:98)
+      at org.jenkinsci.plugins.rolestrategy.casc.RoleDefinition.getRole(RoleDefinition.java:55)
+      at org.jenkinsci.plugins.rolestrategy.casc.RoleDefinition.<init>(RoleDefinition.java:41)
+      at org.jenkinsci.plugins.rolestrategy.casc.RoleBasedAuthorizationStrategyConfigurator.lambda$getRoleDefinition$2(RoleBasedAuthorizationStrategyConfigurator.java:86)
+      at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+      at java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet.lambda$entryConsumer$0(Collections.java:1577)
+      at java.util.concurrent.ConcurrentSkipListMap$EntrySpliterator.forEachRemaining(ConcurrentSkipListMap.java:3535)
+      at java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$UnmodifiableEntrySetSpliterator.forEachRemaining(Collections.java:1602)
+      at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+      at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+      at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+      at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+      at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566)
+      at org.jenkinsci.plugins.rolestrategy.casc.RoleBasedAuthorizationStrategyConfigurator.getRoleDefinitions(RoleBasedAuthorizationStrategyConfigurator.java:76)
+      at org.jenkinsci.plugins.rolestrategy.casc.RoleBasedAuthorizationStrategyConfigurator.lambda$describe$0(RoleBasedAuthorizationStrategyConfigurator.java:67)
+      at io.jenkins.plugins.casc.Attribute.getValue(Attribute.java:236)
+      at io.jenkins.plugins.casc.Attribute.equals(Attribute.java:338)
+      at io.jenkins.plugins.casc.BaseConfigurator.compare(BaseConfigurator.java:390)
+      at org.jenkinsci.plugins.rolestrategy.casc.RoleBasedAuthorizationStrategyConfigurator.describe(RoleBasedAuthorizationStrategyConfigurator.java:94)
+      at org.jenkinsci.plugins.rolestrategy.casc.RoleBasedAuthorizationStrategyConfigurator.describe(RoleBasedAuthorizationStrategyConfigurator.java:34)
+      at io.jenkins.plugins.casc.impl.configurators.HeteroDescribableConfigurator.lambda$convertToNode$de0cd4f8$1(HeteroDescribableConfigurator.java:282)
+      at io.vavr.CheckedFunction0.lambda$unchecked$52349c75$1(CheckedFunction0.java:247)
+      at io.jenkins.plugins.casc.impl.configurators.HeteroDescribableConfigurator.convertToNode(HeteroDescribableConfigurator.java:282)
+      at io.jenkins.plugins.casc.impl.configurators.HeteroDescribableConfigurator.lambda$describe$5(HeteroDescribableConfigurator.java:107)
+      at io.vavr.control.Option.map(Option.java:392)
+      at io.jenkins.plugins.casc.impl.configurators.HeteroDescribableConfigurator.describe(HeteroDescribableConfigurator.java:107)
+      at io.jenkins.plugins.casc.impl.configurators.HeteroDescribableConfigurator.describe(HeteroDescribableConfigurator.java:55)
+      at io.jenkins.plugins.casc.Attribute._describe(Attribute.java:329)
+      at io.jenkins.plugins.casc.Attribute.describe(Attribute.java:265)
+      at io.jenkins.plugins.casc.Configurator.describe(Configurator.java:182)
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  disabledAdministrativeMonitors:
+  - "jenkins.security.QueueItemAuthenticatorMonitor"
+  globalNodeProperties:
+  - toolLocation:
+      locations:
+      - home: "/var/jenkins_home/./tools/hudson.tasks.Maven_MavenInstallation/Default/bin/mvn"
+        key: "hudson.tasks.Maven$MavenInstallation$DescriptorImpl@mvn362"
+  labelAtoms:
+  - name: "core-slave"
+  - name: "jenkins-slave"
+  - name: "master"
+  markupFormatter: "plainText"
+  mode: EXCLUSIVE
+  myViewsTabBar: "standard"
+  nodes:
+  - permanent:
+      labelString: "jenkins-slave"
+      launcher:
+        jnlp:
+          workDirSettings:
+            disabled: false
+            failIfWorkDirIsMissing: false
+            internalDir: "remoting"
+      name: "core-slave"
+      nodeProperties:
+      - toolLocation:
+          locations:
+          - home: "/opt/java/openjdk"
+            key: "hudson.model.JDK$DescriptorImpl@jdk11"
+          - home: "/usr/share/maven/bin/mvn"
+            key: "hudson.tasks.Maven$MavenInstallation$DescriptorImpl@mvn362"
+      - envVars:
+          env:
+          - key: "JAVA_HOME"
+            value: "/opt/java/openjdk"
+          - key: "MAVEN_HOME"
+            value: "/usr/share/maven"
+      numExecutors: 4
+      remoteFS: "/var/jenkins-slave"
+      retentionStrategy: "always"
+  numExecutors: 2
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    gitLab:
+      clientID: "9189e5d2448078b89d1c391d8d87befa70914e5bd18505efe8367743f259931f"
+      clientSecret: "108c98164312756f3ea5ac81d3780532e18f1911fb044da8252d2485bfed14a0"
+      gitlabApiUri: "https://sirius-gitlab.fonyou.com/"
+      gitlabWebUri: "https://sirius-gitlab.fonyou.com/"
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  sSHD:
+    port: -1
+unclassified:
+  anchore:
+    debug: false
+    enginepass: "{AQAAABAAAAAgxs2c4XKnLiVIYECGTNg9VIOfvI5x8Xo0vLBeyMwIzeT7bBqa1fAtIc3qD+MwEOuq}"
+    engineurl: "http://anchore-engine.default.svc.cluster.local:8228/v1"
+    engineuser: "admin"
+    engineverify: false
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  buildStepOperation:
+    enabled: false
+  defaultFolderConfiguration:
+    healthMetrics:
+    - worstChildHealthMetric:
+        recursive: true
+  email-ext:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: |-
+      $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+      Check console output at $BUILD_URL to view the results.
+    defaultContentType: "text/plain"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    defaultTriggerIds:
+    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+    mailAccount:
+      address: "address not configured yet <nobody@nowhere>"
+      smtpPassword: "{AQAAABAAAAAQdiCswX8iRRqSrMFJy3iFFTo2mf1Ri8+NhdZKvbDzxCI=}"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: -1
+    precedenceBulk: false
+    smtpPassword: "{AQAAABAAAAAQdiCswX8iRRqSrMFJy3iFFTo2mf1Ri8+NhdZKvbDzxCI=}"
+    watchingEnabled: false
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "https://sirius-jenkins.fonyou.com/github-webhook/"
+  gitLabConnectionConfig:
+    connections:
+    - apiTokenId: "gitlabid"
+      clientBuilderId: "autodetect"
+      connectionTimeout: 10
+      ignoreCertificateErrors: false
+      name: "sirius-gitlab"
+      readTimeout: 10
+      url: "https://sirius-gitlab.fonyou.com/"
+  gitLabServers:
+    servers:
+    - credentialsId: "root"
+      name: "sirius-gitlab"
+      serverUrl: "https://sirius-gitlab.fonyou.com"
+  gitSCM:
+    createAccountBasedOnEmail: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  globalConfigFiles:
+    configs:
+    - mavenSettings:
+        comment: "User settings"
+        content: |
+          <?xml version="1.0" encoding="UTF-8"?>
+          <settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <servers>
+              <server>
+                <username>jenkins</username>
+                <password>AP2gGWUme4SrFNN5867SqapZAt6</password>
+                <id>central</id>
+                <useCache>false</useCache>
+              </server>
+              <server>
+                <username>jenkins</username>
+                <password>AP2gGWUme4SrFNN5867SqapZAt6</password>
+                <id>snapshots</id>
+                <useCache>false</useCache>
+              </server>
+            </servers>
+            <profiles>
+              <profile>
+                <repositories>
+                  <repository>
+                    <snapshots>
+                      <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>libs-release</name>
+                    <url>https://artifactory.fonyou.com/artifactory/libs-release</url>
+                  </repository>
+                  <repository>
+                    <snapshots />
+                    <id>snapshots</id>
+                    <name>libs-snapshot</name>
+                    <url>https://artifactory.fonyou.com/artifactory/libs-snapshot</url>
+                  </repository>
+                </repositories>
+                <pluginRepositories>
+                  <pluginRepository>
+                    <snapshots>
+                      <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>libs-release</name>
+                    <url>https://artifactory.fonyou.com/artifactory/libs-release</url>
+                  </pluginRepository>
+                  <pluginRepository>
+                    <snapshots />
+                    <id>snapshots</id>
+                    <name>libs-snapshot</name>
+                    <url>https://artifactory.fonyou.com/artifactory/libs-snapshot</url>
+                  </pluginRepository>
+                </pluginRepositories>
+                <id>artifactory</id>
+              </profile>
+            </profiles>
+            <activeProfiles>
+              <activeProfile>artifactory</activeProfile>
+            </activeProfiles>
+          </settings>
+        id: "91accccd-8354-4119-baff-71934e7253b3"
+        isReplaceAll: true
+        name: "MySettings"
+        providerId: "org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig"
+  location:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    url: "https://sirius-jenkins.fonyou.com/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  mavenModuleSet:
+    localRepository: "default"
+  pollSCM:
+    pollingThreadCount: 10
+  sonarGlobalConfiguration:
+    buildWrapperEnabled: true
+    installations:
+    - credentialsId: "SonarQube"
+      name: "SonarQube"
+      serverUrl: "https://sirius-sonar.fonyou.com"
+      triggers:
+        skipScmCause: false
+        skipUpstreamCause: false
+  timestamper:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  jdk:
+    installations:
+    - home: "/var/jenkins_home/opt/jdk-11.0.6+9/"
+      name: "jdk11"
+    - home: "/var/jenkins_home/opt/jdk-11.0.6+9/"
+      name: "jdk9"
+  maven:
+    installations:
+    - name: "mvn362"
+      properties:
+      - installSource:
+          installers:
+          - maven:
+              id: "3.6.3"
