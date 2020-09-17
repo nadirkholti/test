@@ -64,8 +64,8 @@ spec:
         persistentVolumeClaim:
           claimName: jenkins-claim0
       - name: jenkins-config
-         configMap:
-           defaultMode: 0600
-           name: jenkins-config
+        configMap:
+        defaultMode: 0600
+        name: jenkins-config
 #      priorityClassName: high-priority
 status: {}
